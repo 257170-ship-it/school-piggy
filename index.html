@@ -40,7 +40,7 @@
   .subtitle { text-align:center; margin:-.4vh 0 .3vh; color:#cce5ff; font-size:clamp(12px,1.15vw,21px); letter-spacing:.12em; }
   .status { position:absolute; top:1.1vh; right:1.5vw; font-size:clamp(10px,.8vw,15px); color:#c8e1ff; opacity:.85; }
   #board {
-    flex:1; min-height:0; display:grid; grid-template-columns:repeat(5,minmax(0,1fr));
+    flex:1; min-height:0; display:grid; grid-template-columns:repeat(7,minmax(0,1fr));
     grid-template-rows:repeat(3,minmax(0,1fr)); gap:1.15vh 1vw;
   }
   .student-card {
@@ -120,7 +120,7 @@
   <main id="board" aria-live="polite">
     <div class="empty-state">正在載入學生的存錢進度…</div>
   </main>
-  <footer><span>🎯 滿分目標：<strong id="target-label">150 點</strong></span><span>💰 每點折合 4 元</span><span id="updated">等待資料更新</span></footer>
+  <footer><span>🎯 滿分目標：<strong id="target-label">300 點</strong></span><span>💰 每點折合 4 元</span><span id="updated">等待資料更新</span></footer>
 </div>
 <script>
 /*
@@ -135,10 +135,10 @@
  * 6. 若瀏覽器因網路或跨來源限制無法讀取，請確認使用 Google 提供的公開 CSV 匯出網址。
  */
 const CSV_URL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vTs0jXCVpoDZwMflTWAedJkzdyRMJNM5uPJx2ODUQXHWPe3hneozfAc3KNSH9pWrygWJl8aKcinEtM9/pub?gid=0&single=true&output=csv';
-const TARGET_POINTS = 150;
+const TARGET_POINTS = 300;
 const REFRESH_INTERVAL = 30_000;
 const POINT_VALUE = 4;
-const MAX_CARDS = 15;
+const MAX_CARDS = 21;
 
 const board = document.getElementById('board');
 const statusEl = document.getElementById('status');
