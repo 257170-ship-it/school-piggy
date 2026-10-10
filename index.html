@@ -40,8 +40,8 @@
   .subtitle { text-align:center; margin:-.4vh 0 .3vh; color:#cce5ff; font-size:clamp(12px,1.15vw,21px); letter-spacing:.12em; }
   .status { position:absolute; top:1.1vh; right:1.5vw; font-size:clamp(10px,.8vw,15px); color:#c8e1ff; opacity:.85; }
   #board {
-    flex:1; min-height:0; display:grid; grid-template-columns:repeat(3,minmax(0,1fr));
-    grid-template-rows:repeat(4,minmax(0,1fr)); gap:1.15vh 1vw;
+    flex:1; min-height:0; display:grid; grid-template-columns:repeat(4,minmax(0,1fr));
+    grid-template-rows:repeat(3,minmax(0,1fr)); gap:1.15vh 1vw;
   }
   .student-card {
     min-width:0; min-height:0; position:relative; overflow:hidden; display:flex; align-items:center;
@@ -271,7 +271,7 @@ function startAutoPaging() {
 }
 
 async function refreshData() {
-  if (!CSV_URL || CSV_URL === 'YOUR_GOOGLE_SHEETS_CSV_URL') {
+  if (!CSV_URL || CSV_URL === 'https://docs.google.com/spreadsheets/d/e/2PACX-1vTs0jXCVpoDZwMflTWAedJkzdyRMJNM5uPJx2ODUQXHWPe3hneozfAc3KNSH9pWrygWJl8aKcinEtM9/pub?output=csv') {
     statusEl.textContent = '請先設定 Google 試算表 CSV 網址';
     updatedEl.textContent = '尚未連線';
     return;
